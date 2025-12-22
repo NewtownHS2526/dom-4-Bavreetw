@@ -1,0 +1,23 @@
+.button {
+    border-radius: 8px;
+    font-weight: 700;
+  }
+  
+  button#apple {
+    background-color: #ba1a62;
+  }
+  button#banana {
+    background-color: #c8cd7d;
+  }
+  button#mango {
+    background-color: #e4633b;
+  }
+  
+  #shopping-cart {
+    background-color: #e1ebe4;
+    max-width: 600px;
+    min-height: 400px;
+    border-radius: 20px;
+    margin: 20px auto;
+    padding: 20px;
+  }
