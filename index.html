@@ -1,46 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Movie Snack Bar</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Simple To‑Do App</title>
+    <link rel="stylesheet" href="./style.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="container mx-auto px-4 py-8 text-center">
-      <section class="py-8">
-        <h1 class="text-4xl font-bold mb-4">🎬 Movie Snack Bar</h1>
-        <p class="mb-6">Click a snack to add it to your order.</p>
+    <main class="todo-app">
+      <header>
+        <h1>To‑Do</h1>
+        <p class="muted">Add tasks, mark complete, edit, and persist locally.</p>
+      </header>
 
-        <div
-          id="button-group"
-          class="grid grid-cols-1 md:grid-cols-5 gap-4 max-w-5xl mx-auto"
-        >
-          <button class="button px-6 py-3 text-white" id="popcorn">
-            🍿 Popcorn: $4.50
-          </button>
-          <button class="button px-6 py-3 text-white" id="soda">
-            🥤 Soda: $2.50
-          </button>
-          <button class="button px-6 py-3 text-white" id="candy">
-            🍬 Candy: $1.75
-          </button>
-          <button class="button px-6 py-3 text-white" id="nachos">
-            🧀 Nachos: $5.00
-          </button>
-          <button class="button px-6 py-3 text-white" id="icecream">
-            🍦 Ice Cream: $3.25
-          </button>
+      <form id="task-form" class="task-form">
+        <input id="task-input" placeholder="What needs doing?" autocomplete="off" />
+        <button id="add-btn" type="submit">Add</button>
+      </form>
+
+      <section class="controls">
+        <div class="filters">
+          <button data-filter="all" class="filter active">All</button>
+          <button data-filter="active" class="filter">Active</button>
+          <button data-filter="completed" class="filter">Completed</button>
         </div>
+        <button id="clear-completed" class="clear">Clear completed</button>
       </section>
 
-      <section class="py-8">
-        <h3 class="text-2xl font-semibold mb-4">Your Order:</h3>
-        <div id="shopping-cart"></div>
-        <h4 class="text-xl font-semibold mt-4">
-          Total: $<span id="total-span">0</span>
-        </h4>
-      </section>
-    </div>
+      <ul id="tasks" class="task-list" aria-live="polite"></ul>
+
+      <footer class="footer">
+        <span id="items-left">0 items left</span>
+      </footer>
+    </main>
   </body>
 </html>

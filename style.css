@@ -1,23 +1,38 @@
-.button {
-    border-radius: 8px;
-    font-weight: 700;
-  }
-  
-  button#apple {
-    background-color: #ba1a62;
-  }
-  button#banana {
-    background-color: #c8cd7d;
-  }
-  button#mango {
-    background-color: #e4633b;
-  }
-  
-  #shopping-cart {
-    background-color: #e1ebe4;
-    max-width: 600px;
-    min-height: 400px;
-    border-radius: 20px;
-    margin: 20px auto;
-    padding: 20px;
-  }
+:root{
+  --bg:#f7f7f9;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#2563eb;
+  --danger:#ef4444;
+}
+
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); margin:0; color:#111}
+.todo-app{max-width:640px; margin:48px auto; padding:20px}
+header h1{font-size:2.25rem; margin:0}
+.muted{color:var(--muted); margin-top:6px}
+
+.task-form{display:flex; gap:8px; margin:18px 0}
+.task-form input{flex:1; padding:10px 12px; border:1px solid #e5e7eb; border-radius:8px}
+.task-form button{background:var(--accent); color:white; border:0; padding:10px 14px; border-radius:8px; cursor:pointer}
+
+.controls{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px}
+.filters{display:flex; gap:8px}
+.filter{background:transparent; border:1px solid transparent; padding:6px 10px; border-radius:6px; cursor:pointer}
+.filter.active{border-color:#e5e7eb; background:#fff}
+.clear{background:transparent; border:0; color:var(--muted); cursor:pointer}
+
+.task-list{list-style:none; padding:0; margin:0; background:var(--card); border:1px solid #eaeaea; border-radius:10px; overflow:hidden}
+.task-item{display:flex; align-items:center; gap:12px; padding:12px 14px; border-bottom:1px solid #f3f4f6}
+.task-item:last-child{border-bottom:0}
+.task-checkbox{width:18px; height:18px}
+.task-label{flex:1}
+.task-label.done{text-decoration:line-through; color:var(--muted)}
+.task-edit{flex:1; padding:8px; display:none; border:1px solid #e5e7eb; border-radius:6px}
+.task-item.editing .task-label{display:none}
+.task-item.editing .task-edit{display:block}
+.task-delete{background:transparent; border:0; color:var(--danger); cursor:pointer}
+
+.footer{margin-top:12px; color:var(--muted)}
+
+@media (max-width:520px){.todo-app{margin:18px;padding:12px}}
